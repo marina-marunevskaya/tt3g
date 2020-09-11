@@ -20,10 +20,10 @@ const initState = {
 }
 
 export interface IChartState {
-    startDate: string,
-    endDate: string,
-    currencyID: number,
-    error?: string,
+    startDate: string
+    endDate: string
+    currencyID: number
+    error?: string
     data: number[][]
 }
 
