@@ -27,7 +27,7 @@ export interface IChartState {
     data: number[][]
 }
 
-export function chartReducer(
+function chartReducer(
     state: IChartState = initState,
     {
         type,
@@ -58,3 +58,5 @@ export function chartReducer(
             return state
     }
 }
+
+export default chartReducer
