@@ -49,6 +49,7 @@ const config = {
       'selects': path.resolve(__dirname, 'src/selects'),
       'actions': path.resolve(__dirname, 'src/actions'),
       'utils': path.resolve(__dirname, 'src/utils'),
+      'config': path.resolve(__dirname, 'src/config'),
       'api': path.resolve(__dirname, 'src/api'),
       'root-constants': path.resolve(__dirname, 'src/rootConstants'),
       'types': path.resolve(__dirname, 'src/types'),
