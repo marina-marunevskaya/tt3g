@@ -10,10 +10,10 @@ import { calculateDate, formatDate } from 'utils/date'
 const today = new Date()
 
 const initState = {
-    startDate: formatDate(today),
-    endDate: formatDate(
+    startDate: formatDate(
         calculateDate(today, 6)
     ),
+    endDate: formatDate(today),
     currencyID: DEFAULT_CURRENCY,
     error: undefined,
     data: []
