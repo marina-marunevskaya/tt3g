@@ -48,6 +48,7 @@ const config = {
       'reducers': path.resolve(__dirname, 'src/reducers'),
       'selects': path.resolve(__dirname, 'src/selects'),
       'actions': path.resolve(__dirname, 'src/actions'),
+      'utils': path.resolve(__dirname, 'src/utils'),
       'api': path.resolve(__dirname, 'src/api'),
       'root-constants': path.resolve(__dirname, 'src/rootConstants'),
       'types': path.resolve(__dirname, 'src/types'),
