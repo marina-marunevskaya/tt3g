@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo } from 'react'
 import ApexChart, { Props } from 'react-apexcharts'
-import { Select, Spin } from 'antd'
+import { Alert, Select, Spin } from 'antd'
 import { CURRENCIES, DEFAULT_CURRENCY } from 'config/currency'
 import { TReduxProps } from './Container'
 import { StyledContainer, StyledSpinnerContainer } from './style'
@@ -11,6 +11,7 @@ export type TComponentProps = {
 const Rates: React.FC<TComponentProps> = ({
   getChartData,
   setChartCurrency,
+  error,
   fetching,
   startDate,
   endDate,
@@ -58,6 +59,9 @@ const Rates: React.FC<TComponentProps> = ({
 
   return (
     <StyledContainer>
+      {
+        !!error && <Alert message={error} type="error" />
+      }
       <StyledSpinnerContainer>
         {
           fetching && <Spin/>
