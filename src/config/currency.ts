@@ -1,16 +1,16 @@
 export const CURRENCIES = [
-    {
-        id: 145,
-        displayValue: 'USD',
-    },
-    {
-        id: 292,
-        displayValue: 'EUR',
-    },
-    {
-        id: 298,
-        displayValue: 'RUB',
-    },
+  {
+    label: 'USD',
+    value: 145,
+  },
+  {
+    label: 'EUR',
+    value: 292,
+  },
+  {
+    label: 'RUB',
+    value: 298,
+  },
 ];
 
-export const DEFAULT_CURRENCY = CURRENCIES[0].id;
+export const DEFAULT_CURRENCY = CURRENCIES[0].value;
