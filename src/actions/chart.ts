@@ -8,9 +8,9 @@ export const SET_CHART_DATA = `${MODULE_NAME}/SET_CHART_DATA`
 export const SET_CHART_ERROR = `${MODULE_NAME}/SET_CHART_ERROR`
 
 interface Rate {
-    Cur_ID: number
-    Date: string
-    Cur_OfficialRate: number | null | undefined
+  Cur_ID: number
+  Date: string
+  Cur_OfficialRate: number | null | undefined
 }
 
 const CHART_DATA_URL = 'https://www.nbrb.by/api/exrates/rates/dynamics'
