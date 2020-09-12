@@ -1,9 +1,14 @@
-import React, { useEffect, useMemo } from 'react'
+import React, { useCallback, useEffect, useMemo } from 'react'
 import ApexChart, { Props } from 'react-apexcharts'
-import { Alert, Select, Spin } from 'antd'
+import { Alert, Button, Select, Spin } from 'antd'
+import styled from 'styled-components'
 import { CURRENCIES, DEFAULT_CURRENCY } from 'config/currency'
 import { TReduxProps } from './Container'
 import { StyledContainer, StyledSpinnerContainer } from './style'
+
+const StyledButton = styled(Button)`
+  margin:15px 0
+`
 
 export type TComponentProps = {
 } & TReduxProps
@@ -57,10 +62,23 @@ const Rates: React.FC<TComponentProps> = ({
   )
   const type = 'line'
 
+  const repeatRequest = useCallback(
+    () => getChartData(startDate, endDate, currencyID),
+    [
+      getChartData,
+      startDate,
+      endDate,
+      currencyID
+    ]
+  )
+
   return (
     <StyledContainer>
       {
-        !!error && <Alert message={error} type="error" />
+        !!error && <>
+          <Alert message={error} type="error" />
+          <StyledButton disabled={fetching} onClick={repeatRequest} type="primary">Repeat request</StyledButton>
+        </>
       }
       <StyledSpinnerContainer>
         {
