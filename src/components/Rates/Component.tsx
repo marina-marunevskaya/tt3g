@@ -1,5 +1,7 @@
 import React, { useEffect, useMemo } from 'react'
 import ApexChart, { Props } from 'react-apexcharts'
+import { Select } from 'antd'
+import { CURRENCIES, DEFAULT_CURRENCY } from 'config/currency'
 import { TReduxProps } from './Container'
 import { StyledContainer } from './style'
 
@@ -8,6 +10,8 @@ export type TComponentProps = {
 
 const Rates: React.FC<TComponentProps> = ({
   getChartData,
+  setChartCurrency,
+  fetching,
   startDate,
   endDate,
   currencyID,
@@ -60,6 +64,13 @@ const Rates: React.FC<TComponentProps> = ({
         type={type}
         width={500}
         height={300}
+      />
+      <Select
+        defaultValue={DEFAULT_CURRENCY}
+        disabled={fetching}
+        onChange={setChartCurrency}
+        options={CURRENCIES}
+        style={{ width: 120 }}
       />
     </StyledContainer>
   )

@@ -9,6 +9,8 @@ import NotFound from './NotFound'
 import Rates from './Rates'
 import Header from './Header'
 
+import "antd/dist/antd.css"
+
 const { Content } = Layout
 
 function App() {
