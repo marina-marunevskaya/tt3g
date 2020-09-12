@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo } from 'react'
 import ApexChart, { Props } from 'react-apexcharts'
-import { Select } from 'antd'
+import { Select, Spin } from 'antd'
 import { CURRENCIES, DEFAULT_CURRENCY } from 'config/currency'
 import { TReduxProps } from './Container'
-import { StyledContainer } from './style'
+import { StyledContainer, StyledSpinnerContainer } from './style'
 
 export type TComponentProps = {
 } & TReduxProps
@@ -58,6 +58,11 @@ const Rates: React.FC<TComponentProps> = ({
 
   return (
     <StyledContainer>
+      <StyledSpinnerContainer>
+        {
+          fetching && <Spin/>
+        }
+      </StyledSpinnerContainer>
       <ApexChart
         options={chartOptions}
         series={chartSeries}
