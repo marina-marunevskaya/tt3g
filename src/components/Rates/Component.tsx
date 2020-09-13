@@ -1,14 +1,13 @@
 import React, { useCallback, useEffect, useMemo } from 'react'
 import ApexChart, { Props } from 'react-apexcharts'
-import { Alert, Button, Select, Spin } from 'antd'
-import styled from 'styled-components'
+import { Alert, Select, Spin } from 'antd'
 import { CURRENCIES, DEFAULT_CURRENCY } from 'config/currency'
 import { TReduxProps } from './Container'
-import { StyledContainer, StyledSpinnerContainer } from './style'
-
-const StyledButton = styled(Button)`
-  margin:15px 0
-`
+import {
+  StyledButton,
+  StyledContainer,
+  StyledSpinnerContainer
+} from './style'
 
 export type TComponentProps = {
 } & TReduxProps
